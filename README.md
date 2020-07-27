@@ -1,5 +1,5 @@
 # The_Library
-This is a simple mobile application which provides user a list of various well known novels of different genres so that they can go through them and find their intersets. 
+This is a simple mobile application which provides user a list of various well known novels of different genres so that they can go through them and find their interests. 
 
 ## Menu, List of Novels, Dropdown for OverView
 <img src="https://user-images.githubusercontent.com/49520756/88512247-e6919000-d003-11ea-804d-6c37380ae7b2.jpg" width="250"> <img src="https://user-images.githubusercontent.com/49520756/88512413-29536800-d004-11ea-9e5b-77cb19cbf569.jpg" width="250"> <img src="https://user-images.githubusercontent.com/49520756/88512615-78010200-d004-11ea-8ba3-de52a660af51.jpg" width="250">
