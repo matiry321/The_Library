@@ -1,6 +1,9 @@
 package com.example.realapp1;
 
-public class Book {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Book implements Parcelable {
     private int id;
     private String name;
     private String author;
@@ -20,6 +23,29 @@ public class Book {
         this.longDesc = longDesc;
         isExpanded=false;
     }
+
+    protected Book(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        author = in.readString();
+        pages = in.readInt();
+        imageURL = in.readString();
+        shortDesc = in.readString();
+        longDesc = in.readString();
+        isExpanded = in.readByte() != 0;
+    }
+
+    public static final Creator<Book> CREATOR = new Creator<Book>() {
+        @Override
+        public Book createFromParcel(Parcel in) {
+            return new Book(in);
+        }
+
+        @Override
+        public Book[] newArray(int size) {
+            return new Book[size];
+        }
+    };
 
     public boolean isExpanded() {
         return isExpanded;
@@ -96,5 +122,22 @@ public class Book {
                 ", shortDesc='" + shortDesc + '\'' +
                 ", longDesc='" + longDesc + '\'' +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(name);
+        dest.writeString(author);
+        dest.writeInt(pages);
+        dest.writeString(imageURL);
+        dest.writeString(shortDesc);
+        dest.writeString(longDesc);
+        dest.writeByte((byte) (isExpanded ? 1 : 0));
     }
 }

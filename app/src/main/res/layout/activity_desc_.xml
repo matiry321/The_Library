@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Desc_Activity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="207dp"
+        android:layout_height="196dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="30dp"
+
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_marginLeft="50dp"
+        android:text="NAME:"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nameofbook"
+        android:layout_below="@id/name"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/bookname"/>
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_marginLeft="40dp"
+        android:text="AUTHOR:"
+        android:layout_below="@id/bookname"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nameofbook"
+        android:layout_below="@id/author"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/authorname"/>
+
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/authorname"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+        android:text="ADd to Favourites"
+        android:id="@+id/btnfav"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnfav"
+        android:text="LONG DESCRIPTION:"
+        android:textStyle="italic|bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/longdes"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/longdes"
+        android:text="vn fjkbvhjbkbvbvb jvbfkb "
+        android:layout_margin="15dp"
+        android:id="@+id/longDescription"/>
+
+
+
+</RelativeLayout>
+</androidx.core.widget.NestedScrollView>

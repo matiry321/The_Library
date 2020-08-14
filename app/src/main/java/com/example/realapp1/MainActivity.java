@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView image;
-    private Button button1,button2,button3,button4,button5,button6;
+    private Button button1,button2,button3;
     private TextView textView;
 
     @Override
@@ -21,6 +21,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initializer();
         seeallbooks();
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                licence lc = new licence();
+                lc.show(getSupportFragmentManager(),"licence dialog");
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,WebActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initializer()
@@ -29,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
         button1=findViewById(R.id.button1);
         button2=findViewById(R.id.button2);
         button3=findViewById(R.id.button3);
-        button4=findViewById(R.id.button4);
-        button5=findViewById(R.id.button5);
-        button6=findViewById(R.id.button6);
+       // button4=findViewById(R.id.button4);
+
+
 
     }
 

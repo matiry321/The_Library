@@ -1,6 +1,8 @@
 package com.example.realapp1;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.BookViewHolder> {
+    private static final String BOOK_ACT="fortrans";
     private static final String TAG = "BookRecViewAdapter";
 
     private ArrayList<Book> books = new ArrayList<>();
@@ -47,12 +50,14 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, books.get(position).getName()+"Selected", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext,Desc_Activity.class);
+                intent.putExtra(BOOK_ACT,books.get(position));
+                mContext.startActivity(intent);
             }
         });
 
-        holder.txtAuthor.setText((books.get(position).getAuthor()));
-        holder.txtDescription.setText(books.get(position).getShortDesc());
+       // holder.txtAuthor.setText((books.get(position).getAuthor()));
+       // holder.txtDescription.setText(books.get(position).getShortDesc());
 
 
 
@@ -73,9 +78,9 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
         private ImageView imgBook;
         private TextView txtName;
 
-        private ImageView downArrow,upArrow;
-        private RelativeLayout expandedRelLayout;
-        private TextView txtAuthor,txtDescription;
+        //private ImageView downArrow,upArrow;
+       // private RelativeLayout expandedRelLayout;
+        //private TextView txtAuthor,txtDescription;
         public BookViewHolder(@NonNull View itemView) {
             super(itemView);
 
